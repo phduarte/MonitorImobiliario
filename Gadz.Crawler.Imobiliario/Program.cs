@@ -61,7 +61,7 @@ namespace Gadz.Crawler.Imobiliario {
         }
 
         static void Concluir(Placar i) {
-            Console.Title = "Monitor Zap... Obrigado por ter aguardado até o final!";
+            Console.Title = "Obrigado por ter aguardado até o final!";
 
             Log(string.Format("{0} páginas consultadas em {1:HH:mm:ss}", i.BuscasRealizadas, i.TempoDecorrido), ConsoleColor.Green);
             Console.WriteLine();

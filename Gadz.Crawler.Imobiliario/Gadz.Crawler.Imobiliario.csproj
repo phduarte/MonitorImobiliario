@@ -52,7 +52,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MonitorZap\Gadz.Crawler.Imobiliario.Core.csproj">
+    <ProjectReference Include="..\Gadz.Crawler.Imobiliario.Core\Gadz.Crawler.Imobiliario.Core.csproj">
       <Project>{311e63f0-a7bd-44fa-984a-36c49755d33b}</Project>
       <Name>Gadz.Crawler.Imobiliario.Core</Name>
     </ProjectReference>
