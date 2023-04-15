@@ -1,15 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2010
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gadz.Crawler.Imobiliario.Core", "Gadz.Crawler.Imobiliario.Core\Gadz.Crawler.Imobiliario.Core.csproj", "{311E63F0-A7BD-44FA-984A-36C49755D33B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gadz.Crawler.Imobiliario", "Gadz.Crawler.Imobiliario\Gadz.Crawler.Imobiliario.csproj", "{D0614DAD-D421-40C2-A848-3880CDA93910}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0. Core", "0. Core", "{331B90AF-A92F-4B67-937B-66F94A9D122D}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Interfaces", "1. Interfaces", "{D24228C1-3B0B-4323-9708-4E9F924CB45C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,10 +24,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{311E63F0-A7BD-44FA-984A-36C49755D33B} = {331B90AF-A92F-4B67-937B-66F94A9D122D}
-		{D0614DAD-D421-40C2-A848-3880CDA93910} = {D24228C1-3B0B-4323-9708-4E9F924CB45C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {18FEED26-F962-4F6F-8691-D79899CF33C4}
