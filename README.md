@@ -8,12 +8,20 @@ Crawler Web para monitoramento de ofertas de imóveis.
 
 - Domain-Driven Design
 - Arquitetura Hexagonal (Ports & Adapters)
-- IoC - Inversão de Controle
+- Arquitetura em camadas
+- Use Case Pattern
+- IoC - Inversão de Controle / Injeção de Dependência
+- Testes unitários
+- Mock
 
 ### Tecnologias
 
 - Dotnet 6
+- Console Application
 - Tasks async / await
 - HTMLAgilityPack
 - Sqlite
 - Newtonsoft Json
+- Flurl
+- NUnit
+- Moq
