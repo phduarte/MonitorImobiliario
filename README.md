@@ -1,14 +1,19 @@
 # Monitor Imobiliario
 
-Web Crawler para monitoramento de ofertas de imóveis.
+Crawler Web para monitoramento de ofertas de imóveis.
 
-[![Build status](https://ci.appveyor.com/api/projects/status/fg5xa749ge2fion4?svg=true)](https://ci.appveyor.com/project/phduarte/monitorimobiliario) [![BCH compliance](https://bettercodehub.com/edge/badge/phduarte/MonitorImobiliario?branch=master)](https://bettercodehub.com/)
+[![.NET Core Desktop](https://github.com/phduarte/MonitorImobiliario/actions/workflows/dotnet-desktop.yml/badge.svg)](https://github.com/phduarte/MonitorImobiliario/actions/workflows/dotnet-desktop.yml)
 
-### Usando
+### Conceitos e Boas práticas
 
+- Domain-Driven Design
+- Arquitetura Hexagonal (Ports & Adapters)
+- IoC - Inversão de Controle
+
+### Tecnologias
+
+- Dotnet 6
+- Tasks async / await
 - HTMLAgilityPack
-- Tasks
-- Threads
-- DDD
 - Sqlite
-- Json
+- Newtonsoft Json
