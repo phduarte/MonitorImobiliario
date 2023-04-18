@@ -1,0 +1,25 @@
+<Project>
+	<ItemGroup>
+		<PackageReference Update="Microsoft.Extensions.Logging" Version="7.0.0" />
+		<PackageReference Update="Microsoft.Extensions.Logging.Abstractions" Version="7.0.0" />
+		<PackageReference Update="Microsoft.Extensions.Logging.Console" Version="7.0.0" />
+		<PackageReference Update="Microsoft.Extensions.DependencyInjection" Version="6.0.1" />
+		<PackageReference Update="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Update="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+
+		<PackageReference Update="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+
+		<PackageReference Update="Microsoft.Data.Sqlite" version="2.0.0" />
+		<PackageReference Update="Microsoft.Data.Sqlite.Core" version="2.0.0" />
+		<PackageReference Update="SQLitePCLRaw.bundle_green" version="1.1.7" />
+		<PackageReference Update="SQLitePCLRaw.core" version="1.1.7" />
+		<PackageReference Update="SQLitePCLRaw.lib.e_sqlite3.linux" version="1.1.7" />
+		<PackageReference Update="SQLitePCLRaw.lib.e_sqlite3.osx" version="1.1.7" />
+		<PackageReference Update="SQLitePCLRaw.lib.e_sqlite3.v110_xp" version="1.1.7" />
+
+		<PackageReference Update="Flurl" Version="3.0.7" />
+		<PackageReference Update="Flurl.Http" Version="3.2.4" />
+		<PackageReference Update="HtmlAgilityPack" Version="1.11.46" />
+		<PackageReference Update="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
+	</ItemGroup>
+</Project>

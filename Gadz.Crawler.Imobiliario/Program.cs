@@ -1,90 +1,68 @@
-﻿using Gadz.Crawler.Imobiliario.Core;
-using Gadz.Crawler.Imobiliario.Core.DomainModel.Pesquisas;
-using System;
+﻿using Gadz.Crawler.Imobiliario.Application.UseCases;
+using Gadz.Crawler.Imobiliario.Domain.Pesquisas;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
-namespace Gadz.Crawler.Imobiliario {
+namespace Gadz.Crawler.Imobiliario.Worker;
 
-    class Program {
+class Program
+{
+    const string APP_TITLE = "Crawler de Imóveis";
 
-        static object _lock = new object();
+    static async Task Main(string[] args)
+    {
+        var serviceProvider = IoC.ConfigureDependencyInjection();
+        var logger = serviceProvider.GetService<ILogger<Program>>() ?? throw new NotImplementedException("ILogger<Program>");
+        var useCase = serviceProvider.GetService<BuscarOfertasUseCase>() ?? throw new NotImplementedException("BuscarOfertasUseCase");
 
-        static void Main(string[] args) {
+        if (useCase == null)
+        {
+            return;
+        }
 
-            var provedor = Provedor.Instance;
+        useCase.OnStatusChanged += (message) => logger.LogInformation(message);
+        useCase.OnErrorOccurred += (ex) => logger.LogError(ex, "");
 
-            do {
+        do
+        {
+            ResetScreen();
 
-                RedefinirTela();
-
-                string estado = PegarEstado();
-                string cidade = PegarCidade(estado);
+            try
+            {
+                string estado = GetParameter("Em qual estado você deseja buscar?");
+                string cidade = GetParameter("Em qual cidade de " + estado + " você deseja buscar?");
 
                 Console.Clear();
 
-                var criterios = provedor.CriarCriteriosDePesquisa();
+                BuscarOfertasInput input = new()
+                {
+                    Dormitorios = 2,
+                    Vagas = 1,
+                    Cidade = cidade,
+                    Estado = estado,
+                    Ordenacao = CriterioDeOrdenacao.Valor
+                };
 
-                provedor.OnOfertaFound += Escrever;
-                provedor.OnErrorOccurred += EscreverErro;
-                provedor.OnRefreshCompleted += AtualizarStatus;
-                provedor.OnCompleted += Concluir;
-
-                criterios.FiltroDormitorios.Add("2");
-                criterios.FiltroVagas.Add("1");
-                criterios.ParametrosAutosuggest.Cidade = cidade;
-                criterios.ParametrosAutosuggest.Estado = estado;
-                criterios.Ordem = Ordem.Valor;
-
-                provedor.Pesquisar(criterios);
-
-            } while (true);
-        }
-
-        private static void RedefinirTela() {
-            Console.Title = "Crawler de Imóveis";
-            Console.Clear();
-        }
-
-        private static string PegarCidade(string estado) {
-            Console.Write("Em qual cidade de " + estado + " você deseja buscar? ");
-            return Console.ReadLine();
-        }
-
-        private static string PegarEstado() {
-            Console.Write("Em qual estado você deseja buscar? ");
-            return Console.ReadLine();
-        }
-
-        static void AtualizarStatus(Placar status) {
-            float percentual = status.PáginasEncontradas > 0 ? status.BuscasRealizadas / (float)status.PáginasEncontradas : 0F;
-            string _ = string.Format("Tempo total decorrido {0:HH:mm:ss} . Tempo restante previsto: {1:HH:mm:ss}", status.TempoDecorrido, status.TempoPrevisto);
-            Console.Title = string.Format("Página {0} de {1} ({5:P0})- {2} processos simultâneos e {3} gravações paralelas - {4}", status.BuscasRealizadas, status.PáginasEncontradas, status.BuscasEmExecução, status.GravaçõesEmExecução, _, percentual);
-        }
-
-        static void Concluir(Placar i) {
-            Console.Title = "Obrigado por ter aguardado até o final!";
-
-            Log(string.Format("{0} páginas consultadas em {1:HH:mm:ss}", i.BuscasRealizadas, i.TempoDecorrido), ConsoleColor.Green);
-            Console.WriteLine();
-            Log("Pressione qualquer tecla para continuar.", ConsoleColor.Cyan);
-
-            Console.ReadKey();
-        }
-
-        static void Escrever(string message) {
-            Log(message, ConsoleColor.White);
-        }
-
-        static void EscreverErro(string erro) {
-            Log(erro, ConsoleColor.Red);
-        }
-
-        static void Log(string text, ConsoleColor color) {
-            lock (_lock) {
-                var _f = Console.ForegroundColor;
-                Console.ForegroundColor = color;
-                Console.WriteLine(string.Format("{0:HH:mm:ss} - {1}", DateTime.Now, text));
-                Console.ForegroundColor = _f;
+                await useCase.Executar(input);
             }
-        }
+            catch (Exception ex)
+            {
+                logger.LogError(ex, "");
+            }
+
+        } while (true);
+    }
+
+    private static void ResetScreen()
+    {
+        Console.Title = APP_TITLE;
+        Console.Clear();
+    }
+
+    private static string GetParameter(string message)
+    {
+        Console.Write("{0} ", message);
+
+        return Console.ReadLine() ?? throw new ArgumentNullException(message);
     }
 }

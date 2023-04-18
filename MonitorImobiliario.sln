@@ -3,9 +3,38 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gadz.Crawler.Imobiliario.Core", "Gadz.Crawler.Imobiliario.Core\Gadz.Crawler.Imobiliario.Core.csproj", "{311E63F0-A7BD-44FA-984A-36C49755D33B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gadz.Crawler.Imobiliario.Domain", "Gadz.Crawler.Imobiliario.Core\Gadz.Crawler.Imobiliario.Domain.csproj", "{311E63F0-A7BD-44FA-984A-36C49755D33B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gadz.Crawler.Imobiliario", "Gadz.Crawler.Imobiliario\Gadz.Crawler.Imobiliario.csproj", "{D0614DAD-D421-40C2-A848-3880CDA93910}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gadz.Crawler.Imobiliario.Worker", "Gadz.Crawler.Imobiliario\Gadz.Crawler.Imobiliario.Worker.csproj", "{D0614DAD-D421-40C2-A848-3880CDA93910}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. User Interfaces", "1. User Interfaces", "{E06FED80-B931-4849-9CA6-C2F539A8333B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Tests", "4. Tests", "{9414B642-81F4-4720-9260-7A4513270AC2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. Solutions Items", "5. Solutions Items", "{022E6025-66EB-4D09-870C-B299C1A3691A}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Build.targets = Directory.Build.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Core", "2. Core", "{0C88B456-71AF-4D55-AC18-2B8ED2D7FCC2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gadz.Crawler.Imobiliario.Application", "Gadz.Crawler.Imobiliario.Application\Gadz.Crawler.Imobiliario.Application.csproj", "{D0951F60-09A6-40A6-AED4-215055DEBAB5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Infrastructure", "3. Infrastructure", "{2E41C2CA-4997-4881-94A7-28908FB7587A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gadz.Crawler.Imobiliario.Sqlite", "Gadz.Crawler.Imobiliario.Sqlite\Gadz.Crawler.Imobiliario.Sqlite.csproj", "{82A46A8C-8E1A-4334-A692-0625BFCA391D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gadz.Crawler.Imobiliario.FlatFile", "Gadz.Crawler.Imobiliario.FlatFile\Gadz.Crawler.Imobiliario.FlatFile.csproj", "{D7E9316D-62D9-44DE-AA3B-DCB6655CCD4A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gadz.Crawler.Imobiliario.Zap", "Gadz.Crawler.Imobiliario.Zap\Gadz.Crawler.Imobiliario.Zap.csproj", "{63FE900F-4A09-44FD-84DC-DD28EC83C9E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gadz.Crawler.Imobiliario.Application.Tests", "Gadz.Crawler.Imobiliario.Application.Tests\Gadz.Crawler.Imobiliario.Application.Tests.csproj", "{CEC1F9EB-5A7C-4635-953E-B097E12283EC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.1. CrossCutting", "3.1. CrossCutting", "{589D4129-BCBE-4974-9989-675C84D3C3D5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.2. Adapters", "3.2. Adapters", "{368EBACC-0DF5-4CCB-90EB-FC451D737EFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gadz.Crawler.Imobiliario.Extensions", "Gadz.Crawler.Imobiliario.Extensions\Gadz.Crawler.Imobiliario.Extensions.csproj", "{3C712B62-832B-463C-AD9E-65ECB0F62B67}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +50,45 @@ Global
 		{D0614DAD-D421-40C2-A848-3880CDA93910}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0614DAD-D421-40C2-A848-3880CDA93910}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0614DAD-D421-40C2-A848-3880CDA93910}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0951F60-09A6-40A6-AED4-215055DEBAB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0951F60-09A6-40A6-AED4-215055DEBAB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0951F60-09A6-40A6-AED4-215055DEBAB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0951F60-09A6-40A6-AED4-215055DEBAB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82A46A8C-8E1A-4334-A692-0625BFCA391D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82A46A8C-8E1A-4334-A692-0625BFCA391D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82A46A8C-8E1A-4334-A692-0625BFCA391D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82A46A8C-8E1A-4334-A692-0625BFCA391D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7E9316D-62D9-44DE-AA3B-DCB6655CCD4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7E9316D-62D9-44DE-AA3B-DCB6655CCD4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7E9316D-62D9-44DE-AA3B-DCB6655CCD4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7E9316D-62D9-44DE-AA3B-DCB6655CCD4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63FE900F-4A09-44FD-84DC-DD28EC83C9E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63FE900F-4A09-44FD-84DC-DD28EC83C9E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63FE900F-4A09-44FD-84DC-DD28EC83C9E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63FE900F-4A09-44FD-84DC-DD28EC83C9E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEC1F9EB-5A7C-4635-953E-B097E12283EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEC1F9EB-5A7C-4635-953E-B097E12283EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEC1F9EB-5A7C-4635-953E-B097E12283EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEC1F9EB-5A7C-4635-953E-B097E12283EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C712B62-832B-463C-AD9E-65ECB0F62B67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C712B62-832B-463C-AD9E-65ECB0F62B67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C712B62-832B-463C-AD9E-65ECB0F62B67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C712B62-832B-463C-AD9E-65ECB0F62B67}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{311E63F0-A7BD-44FA-984A-36C49755D33B} = {0C88B456-71AF-4D55-AC18-2B8ED2D7FCC2}
+		{D0614DAD-D421-40C2-A848-3880CDA93910} = {E06FED80-B931-4849-9CA6-C2F539A8333B}
+		{D0951F60-09A6-40A6-AED4-215055DEBAB5} = {0C88B456-71AF-4D55-AC18-2B8ED2D7FCC2}
+		{82A46A8C-8E1A-4334-A692-0625BFCA391D} = {368EBACC-0DF5-4CCB-90EB-FC451D737EFD}
+		{D7E9316D-62D9-44DE-AA3B-DCB6655CCD4A} = {368EBACC-0DF5-4CCB-90EB-FC451D737EFD}
+		{63FE900F-4A09-44FD-84DC-DD28EC83C9E2} = {368EBACC-0DF5-4CCB-90EB-FC451D737EFD}
+		{CEC1F9EB-5A7C-4635-953E-B097E12283EC} = {9414B642-81F4-4720-9260-7A4513270AC2}
+		{589D4129-BCBE-4974-9989-675C84D3C3D5} = {2E41C2CA-4997-4881-94A7-28908FB7587A}
+		{368EBACC-0DF5-4CCB-90EB-FC451D737EFD} = {2E41C2CA-4997-4881-94A7-28908FB7587A}
+		{3C712B62-832B-463C-AD9E-65ECB0F62B67} = {589D4129-BCBE-4974-9989-675C84D3C3D5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {18FEED26-F962-4F6F-8691-D79899CF33C4}
