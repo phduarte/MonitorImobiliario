@@ -1,6 +1,6 @@
 ﻿namespace Gadz.Crawler.Imobiliario.Domain.Pesquisas
 {
-    public interface IPlataformaDeBusca : IPort
+    public interface IPlataformaDeBusca : IExternalService
     {
         Task<Pesquisa> BuscarOfertas(CriteriosDeBusca pesquisa);
     }
